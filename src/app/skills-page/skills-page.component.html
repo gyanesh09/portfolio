@@ -1,4 +1,23 @@
-<ngx-charts-pie-grid
-  [results]="single"
-  (select)="onSelect($event)">
-</ngx-charts-pie-grid>
+<div class="skills-page-wrapper">
+  <!-- <span class="skills-header">My Skills</span> -->
+  <div class="carousal-container">
+    <div class="skills-container">
+      <div class="prev-btn">
+        <img class="prev-icon-carousal" src="assets/img/prev-icon.png" (click)="onPrevClick()">
+      </div>
+      <div class="skill-card-wrapper">
+        <div class="skills-card-container">
+            <div class="skill-card" *ngFor="let skill of skillsData[selectedIndex]">
+              <img src={{skill.icon}} class="skill-icon">
+          </div>
+        </div>
+      </div>
+      <div class="prev-btn">
+        <img class="next-icon-carousal" src="assets/img/prev-icon.png" (click)="onNextClick()">
+      </div>
+    </div>
+    <div class="carousal-dots-container">
+      <div class="carousal-dot" *ngFor="let dot of skillsData; let i=index" [ngClass]="i==selectedIndex?'active':''" (click)="setSelectedIndex(i)"></div>
+    </div>
+  </div>
+</div>

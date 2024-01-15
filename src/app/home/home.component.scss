@@ -2,7 +2,7 @@
 
 .home-container {
     background-color: $primary-dark-bg;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -10,7 +10,7 @@
     background-image: linear-gradient(#181818D4, #0E0E0E00);
     position: absolute;
     clip-path: polygon(100% 0, 0 0, 100% 100%);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     .home-header {
