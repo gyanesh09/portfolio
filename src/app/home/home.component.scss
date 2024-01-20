@@ -52,24 +52,7 @@
         flex-direction: column;
         flex: 1;
 
-        p:first-child {
-            font-size: 4rem;
-            color: $secondary-text-color;
-        }
-
-        p:nth-child(2) {
-            font-size: 7rem;
-        }
-
-        p:nth-child(3) {
-            font-size: 4rem;
-            color: $secondary-text-color;
-
-            #job-role {
-                color: $primary-flash-green;
-            }
-        }
-
+    
         .profile-desc {
             padding-left: 2rem;
             text-wrap: wrap;
@@ -81,7 +64,10 @@
 
     .home-right-container {
         padding-top: 6rem;
-        padding-right: 7rem;
+        padding-right: 5rem;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
     }
 }
 
@@ -112,4 +98,76 @@
             content: "Download CV";
         }
     }
+}
+
+.typewriter-forward{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 4rem;
+    animation: 
+        typing 1.3s steps(25, end) forwards;
+      animation-delay: 0.5s;
+    width: 0;
+    color: $primary-flash-green;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+    
+  }
+
+
+  .typewriter-reverse{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 4rem;
+    animation: 
+        typing-reverse 1.3s steps(25, end) forwards;
+      animation-delay: 0.5s;
+    width: 100%;
+    color: $primary-flash-green;
+  }
+  
+  /* The typing effect */
+  @keyframes typing-reverse {
+    from { width: 100% }
+    to { width: 0% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+    
+  }
+
+  .first-line {
+    font-size: 4rem;
+    color: $secondary-text-color;
+}
+
+    .second-line {
+    font-size: 7rem;
+}
+
+.third-line {
+    font-size: 4rem;
+    color: $secondary-text-color;
+
+    #job-role {
+        color: $primary-flash-green;
+    }
+}
+
+#job-role{
+    color: $primary-flash-green;
+    display: inline-block;
 }
