@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ExpPageComponent } from './exp-page/exp-page.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxChartsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

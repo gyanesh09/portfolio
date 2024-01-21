@@ -1,22 +1,17 @@
-<div class="home-container">
+<div class="home-container" id="home-page">
     <div class="home-polygon">
-        <div class="home-header">
-            <div class="nav-item active">Home</div>
-            <div class="nav-item">Skills</div>
-            <div class="nav-item">Experience</div>
-            <div class="nav-item">Contact</div>
-        </div>
-    </div>
+    </div>` 
     <div class="home-content">
-        <div class="home-left-container" >
+        <div class="home-left-container">
             <p>
                 <span class="first-line">Hello it's me</span>
                 <br>
                 <span class="second-line">Gyanesh Sharma</span>
                 <br>
-                <p class="first-line">and I'm a, <p class="typewriter-forward">Front End Developer</p>
-            <div class="desc-container">
-                <div class="download-cv-bt">
+            <p class="first-line">and I'm a,
+            <p class="typewriter-forward">Front End Developer</p>
+            <div class="desc-container">  
+                <div class="download-cv-bt" (click)="downloadCV()">
                     <img src="assets/img/download.svg">
                 </div>
                 <div class="profile-desc">
@@ -34,5 +29,12 @@
     </div>
 </div>
 
-<app-exp-page></app-exp-page>
-<app-skills-page></app-skills-page>
+<div class="toast-msg">
+    <div class="toast-msg-icon">
+        <img src="assets/img/correct.png">
+    </div>
+    <div class="toast-msg-text">
+        CV Downloaded!
+    </div>
+</div>
+

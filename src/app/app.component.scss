@@ -1,0 +1,29 @@
+@import "../colors.scss";
+
+.home-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+    gap: 2rem;
+    // margin-top: 1rem;
+    padding-top: 1vh;
+    height: 7vh;
+    font-size: 1.6rem;
+    padding: 3rem 7rem 1.5rem 2rem;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+
+    .nav-item {
+        cursor: pointer;
+
+        &.active {
+            color: $primary-flash-green;
+        }
+
+        &:hover {
+            color: $primary-button-hover;
+        }
+    }
+}
