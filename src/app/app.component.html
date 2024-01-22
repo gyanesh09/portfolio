@@ -1,12 +1,8 @@
-<div class="home-header">
-    <div class="nav-item active" (click)="scrollToSection('home-page')">Home</div>
-    <div class="nav-item" (click)="scrollToSection('exp-page')">Experience</div>
-    <div class="nav-item" (click)="scrollToSection('skills-page')">Skills</div>
-    <div class="nav-item">Contact</div>
+<div style="display: flex;justify-content: flex-end;align-items: center;height: 10vh;padding-right: 2vw;background-color: black;">
+    <div class="home-header">
+        <div class="nav-item" [ngClass]="item.isActive?'active':''" *ngFor="let item of navBarItems; let i =index" (click)="scrollToSection(item.scrollToSection,i)">{{item.label}}</div>
+    </div>
 </div>
-
-<div class="content-container">
-    <app-home></app-home>
-    <app-exp-page id="exp-page"></app-exp-page>
-    <app-skills-page id="skills-page"></app-skills-page>
-</div>
+<app-home (scrollToSection)="scrollToSection('exp-page',1)"></app-home>
+<app-exp-page id="exp-page"></app-exp-page>
+<!-- <app-skills-page id="skills-page"></app-skills-page> -->

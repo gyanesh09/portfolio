@@ -6,17 +6,13 @@
     justify-content: flex-end;
     color: white;
     gap: 2rem;
-    // margin-top: 1rem;
-    padding-top: 1vh;
-    height: 7vh;
-    font-size: 1.6rem;
-    padding: 3rem 7rem 1.5rem 2rem;
     background-color: transparent;
     position: fixed;
     width: 100%;
 
     .nav-item {
         cursor: pointer;
+        font-size: 1.3vmax;
 
         &.active {
             color: $primary-flash-green;
@@ -25,5 +21,15 @@
         &:hover {
             color: $primary-button-hover;
         }
+    }
+}
+
+
+@media (max-width:500px) {
+    .nav-item{
+        font-size: 1.7vmax !important; 
+    }
+    .home-header{
+        padding-right: 1rem;
     }
 }

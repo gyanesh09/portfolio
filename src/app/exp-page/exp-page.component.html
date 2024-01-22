@@ -1,4 +1,4 @@
-<div class="experience-container">
+<div class="exp-container">
     <div class="exp-counter-wrapper">
         <div id="exp-count">
             {{experience}}
@@ -10,31 +10,22 @@
     <div class="exp-nav-container">
         <div class="exp-nav-header">
             <img src="assets/img/circle-icon.svg">
-            <p style="text-wrap: nowrap;">Where I've worked</p>
+            <p style="text-wrap: nowrap;font-size: 1.5vmax;">Where I've worked</p>
             <hr class="exp-ruler">
         </div>
         <div class="exp-desc-container">
             <div class="exp-nav-bar">
                 <ul>
-                    <li class="exp-nav-item active">NielsenIQ</li>
-                    <li class="exp-nav-item">TCS</li>
-                    <li class="exp-nav-item">scAI</li>
+                    <li class="exp-nav-item" [ngClass]="exp.isActive?'active':''"
+                        *ngFor="let exp of expContent; let i = index" (click)="switchActive(exp.companyName,i)">
+                        {{exp.companyName}}</li>
                 </ul>
             </div>
             <div class="exp-desc-content">
                 <ul>
-                    <li>Working for NielsenIQ client deliverables.
-                    <li>Providing solutions for Business Intelligence - Data analytics team, taking care of complete
-                        front-end of the application and at the same time providing supportfor Java-backend as well
-                        which is embedded with Microstrategy BI SDK summary.</li>
-                    <li>Worked on creating jenkins pipeline for environment based deployment</li>
-                    <li>Working in Agile Environment, applied Agile Test Practices SCRUM , Scripted Test Cases for Test
-                        Driven Development.</li>
+                    <li *ngFor="let desc of expContent[activeExpIndex].description">{{desc}}</li>
                 </ul>
-                <hr class="exp-ruler bottom">
             </div>
-            <div class="exp-ruler right"></div>
-
         </div>
     </div>
 </div>

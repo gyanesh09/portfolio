@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto;
+    scroll-behavior: smooth;
+    // transition: scroll s linear;
 }
 
 html{
@@ -25,12 +27,12 @@ body{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: black; 
+    background: transparent; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(21, 21, 21); 
+    background:transparent; 
   }
   
   /* Handle on hover */
