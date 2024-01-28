@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ExpPageComponent } from './exp-page/exp-page.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { TagCloudComponent } from 'angular-tag-cloud-module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgApexchartsModule,
+    TagCloudComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

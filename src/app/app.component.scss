@@ -10,6 +10,11 @@
     position: fixed;
     width: 100%;
 
+
+
+    display: flex;justify-content: flex-end;align-items: center;height: 10vh;padding-right: 2vw;
+
+
     .nav-item {
         cursor: pointer;
         font-size: 1.3vmax;
