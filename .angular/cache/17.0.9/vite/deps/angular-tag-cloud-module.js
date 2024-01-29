@@ -15,7 +15,7 @@ import {
   ɵɵdirectiveInject,
   ɵɵlistener,
   ɵɵresolveWindow
-} from "./chunk-7IRE5MBL.js";
+} from "./chunk-PQVVWZCZ.js";
 
 // node_modules/angular-tag-cloud-module/fesm2022/angular-tag-cloud-module.mjs
 var DEFAULT_HEIGHT = 400;
