@@ -1,6 +1,7 @@
-    <div class="home-header">
-        <div class="nav-item" [ngClass]="item.isActive?'active':''" *ngFor="let item of navBarItems; let i =index" (click)="scrollToSection(item.scrollToSection,i)">{{item.label}}</div>
-    </div>
+<div class="home-header">
+    <div class="nav-item" [ngClass]="item.isActive?'active':''" *ngFor="let item of navBarItems; let i =index" (click)="scrollToSection(item.scrollToSection,i)">{{item.label}}</div>
+</div>
 <app-home (scrollToSection)="scrollToSection('exp-page',1)"></app-home>
 <app-exp-page id="exp-page"></app-exp-page>
 <app-skills-page id="skills-page"></app-skills-page>
+<app-contacts id="contacts-page"></app-contacts>

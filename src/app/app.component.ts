@@ -36,10 +36,6 @@ export class AppComponent {
 
   scrollToSection(sectionId: string, i: number) {
     const element = this.el.nativeElement.querySelector(`#${sectionId}`);
-    // this.navBarItems.forEach((item) => {
-    //   item.isActive = false
-    // })
-    // this.navBarItems[i].isActive = true
     if (element) {
       element.scrollIntoView();
     }
@@ -51,7 +47,7 @@ export class AppComponent {
     })
   }
 
-  sectionIds = ['home-page', 'exp-page', 'skills-page', 'contact'];
+  sectionIds = ['home-page', 'exp-page', 'skills-page', 'contacts-page'];
 
   activeNavItem='home-page';
 

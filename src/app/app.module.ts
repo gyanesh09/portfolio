@@ -9,6 +9,8 @@ import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { TagCloudComponent } from 'angular-tag-cloud-module';
+import { ContactsComponent } from './contacts/contacts.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { TagCloudComponent } from 'angular-tag-cloud-module';
     HomeComponent,
     ExpPageComponent,
     SkillsPageComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgApexchartsModule,
-    TagCloudComponent
+    TagCloudComponent,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

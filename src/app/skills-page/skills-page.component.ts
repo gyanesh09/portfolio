@@ -1,6 +1,6 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
-import { CloudOptions, CloudData, ZoomOnHoverOptions } from 'angular-tag-cloud-module';
-import { ApexAxisChartSeries, ApexChart, ApexTitleSubtitle, ApexXAxis, ChartComponent } from 'ng-apexcharts';
+import { Component, ViewChild } from '@angular/core';
+import { CloudData, CloudOptions, ZoomOnHoverOptions } from 'angular-tag-cloud-module';
+import { ChartComponent } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-skills-page',

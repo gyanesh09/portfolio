@@ -1,0 +1,44 @@
+<div class="contacts-page">
+    <div class="left-pane">
+        <h1>Contact Me</h1>
+        <div class="mail" style="display: flex;flex-direction: row; gap:1rem;color: white;align-items: center;">
+            <img src="assets/img/send-mail.svg" style="width: 2rem;">
+            <span>gyanesh0902&#64;gmail.com</span>
+        </div>
+        <div class="mail" style="display: flex;flex-direction: row; gap:1rem;color: white;align-items: center;">
+            <img src="assets/img/phone-fill.svg" style="width: 2rem;">
+            <span>+919165190035</span>
+        </div>
+        <div class="first-row">
+            <div class="contact-way-container">
+                <img src="assets/img/insta.svg" class="contact-way-icon">
+            </div>
+            <div class="contact-way-container">
+                <img src="assets/img/linkedin.svg" class="contact-way-icon">
+            </div>
+            <div class="contact-way-container">
+                <img src="assets/img/twitter.svg" class="contact-way-icon">
+            </div>
+            <div class="contact-way-container">
+                <img src="assets/img/telegram.svg" class="contact-way-icon">
+            </div>
+        </div>
+    </div>
+    <div class="right-pane">
+        <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+            <div>
+              <label for="name">Name:</label>
+              <input class="text-input" type="text" id="name" name="name" placeholder="Your Name" [(ngModel)]="formData.name" required>
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input class="text-input" type="email" id="email" name="email" placeholder="Your Email" [(ngModel)]="formData.email" required>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea class="text-area" id="message" rows="10" name="message" placeholder="Message" [(ngModel)]="formData.message" required></textarea>
+              </div>
+            <button class="submit-button" type="submit">Submit</button>
+          </form>
+    </div>
+</div>
