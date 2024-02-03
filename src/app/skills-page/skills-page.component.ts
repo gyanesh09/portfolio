@@ -29,7 +29,7 @@ export class SkillsPageComponent {
       opacity: 0.2,
       colors: ['#14FF00']
     },
-    
+
     markers: {
       size: 5,
       hover: {
@@ -51,13 +51,39 @@ export class SkillsPageComponent {
       parentHeightOffset: 0,
     },
     responsive: [{
+      breakpoint: 450,
+      options: {
+        chart: {
+          width: '130%'
+        }
+      },
+    },
+    {
       breakpoint: 600,
       options: {
-          chart: {
-              width:'180%'
-          }
+        chart: {
+          width: '180%'
+        }
       }
-  }],
+    },
+    {
+      breakpoint: 380,
+      options: {
+        chart: {
+          width: '115%'
+        }
+      }
+    },
+    {
+      breakpoint: 300,
+      options: {
+        chart: {
+          width: '95%'
+        }
+      }
+    }
+
+    ],
     xaxis: {
       categories: ['Angular', 'Java', 'TypeScript', 'Spring Boot', 'Python', 'CSS', 'Azure', 'Redux', 'Javascript'],
       labels: {
@@ -101,7 +127,7 @@ export class SkillsPageComponent {
 
   @ViewChild('radarChart') radarChart!: ChartComponent;
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.updateTagCloudDim(window.innerWidth);
   }
 
@@ -111,9 +137,9 @@ export class SkillsPageComponent {
   //   this.updateTagCloudDim(event.target.innerWidth);
   // }
 
-  updateTagCloudDim(screenWidth:number){
-    if (screenWidth<600){
-      this.tagCloudoptions.width=0.8
+  updateTagCloudDim(screenWidth: number) {
+    if (screenWidth < 600) {
+      this.tagCloudoptions.width = 0.8
       this.data = [
         { text: 'Angular', weight: 10, color: '#14FF00' },
         { text: 'Python', weight: 7, color: '#CED4DA' },
@@ -137,10 +163,10 @@ export class SkillsPageComponent {
         { text: 'SQL', weight: 7, color: '#ADB5BD' },
       ];
     }
-    else if(screenWidth<1300 && screenWidth>600)
-      this.tagCloudoptions.width=0.9
+    else if (screenWidth < 1300 && screenWidth > 600)
+      this.tagCloudoptions.width = 0.9
     else
-      this.tagCloudoptions.width=0.4
+      this.tagCloudoptions.width = 0.4
   }
 
   public initChart(chart: any): void {
@@ -155,7 +181,7 @@ export class SkillsPageComponent {
   };
 
   zoomOnHoverOptions: ZoomOnHoverOptions = {
-    scale: 1.3, 
+    scale: 1.3,
     transitionTime: 0.45,
   };
 

@@ -213,6 +213,21 @@
     }
 }
 
+@media (max-width:830px) {
+    .home-right-container {
+            img{
+                height: 30vmax !important;
+            }
+    }
+}
+
+@media (max-width:300px) {
+    .home-content{
+            padding-left: 1vmax;
+    }
+}
+
+
 .scroll-down {
     position: absolute;
     bottom: 2%;
@@ -253,5 +268,8 @@
     }
     .profile-desc{
         font-size: 1.5vmax !important;
+    }
+    .home-right-container{
+        padding-right: 0;
     }
 }
