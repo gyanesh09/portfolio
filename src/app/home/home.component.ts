@@ -12,7 +12,7 @@ export class HomeComponent {
   constructor(private renderer: Renderer2,public el: ElementRef, private http: HttpClient){};
 
   @Output()
-  scrollToSection:EventEmitter<string>=new EventEmitter();
+  scrollToSection:EventEmitter<any>=new EventEmitter();
 
   ngAfterViewInit(){
     const elementToModify = this.el.nativeElement.querySelector('.typewriter-forward');
@@ -60,8 +60,8 @@ export class HomeComponent {
     },200)
   }
 
-  scrollPage(sectionId: string) {
-    this.scrollToSection.emit('exp-page');
+  scrollPage(sectionId: string, event:Event) {
+    this.scrollToSection.emit();
   }
 
 }

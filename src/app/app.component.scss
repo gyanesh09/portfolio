@@ -9,11 +9,11 @@
     background-color: transparent;
     position: fixed;
     width: 100%;
-
-
-
-    display: flex;justify-content: flex-end;align-items: center;height: 10vh;padding-right: 2vw;
-
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    padding-right: 2vw;
 
     .nav-item {
         cursor: pointer;
@@ -31,10 +31,84 @@
 
 
 @media (max-width:500px) {
-    .nav-item{
-        font-size: 1.7vmax !important; 
+    .nav-item {
+        font-size: 1.7vmax !important;
     }
-    .home-header{
+
+    .home-header {
         padding-right: 1rem;
+    }
+}
+
+.mobile-sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: $primary-dark-bg;
+    overflow-x: hidden;
+    transition: 0.3s;
+    opacity: 0.97;
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.mobile-sidebar div {
+    padding: 1.7rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.3vmax;
+    color: white;
+    display: block;
+    transition: width 0.3s;
+}
+
+.sidebar-item.active {
+    background-color: $primary-button-hover;
+    color: $primary-dark-bg !important;
+}
+
+@media(max-width:600px) {
+    .mobile-sidebar div {
+        font-size: 2vmax;
+    }
+
+    .menu-icon {
+        display: block !important;
+    }
+
+    .nav-item {
+        display: none !important;
+    }
+}
+
+.mobile-sidebar.active {
+    width: 80%;
+    visibility: visible;
+    padding: 1rem;
+}
+
+.close-bt {
+    width: 35px;
+    cursor: pointer;
+    align-self: flex-end;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+}
+
+.menu-icon {
+    width: 25px;
+    cursor: pointer;
+    display: none;
+
+    &.disable {
+        visibility: hidden;
     }
 }

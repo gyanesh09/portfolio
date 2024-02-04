@@ -211,6 +211,13 @@
                 display: none;
             }
     }
+    .download-cv-bt{
+        border-right: none;
+    }
+    .profile-desc{
+        border-left: 2px solid $primary-flash-green;
+        padding-left: 1rem !important;
+    }
 }
 
 @media (max-width:830px) {
@@ -267,9 +274,14 @@
         }
     }
     .profile-desc{
-        font-size: 1.5vmax !important;
+        font-size: 1.7vmax !important;
+        width: 100% !important;
     }
     .home-right-container{
         padding-right: 0;
+        display: none !important;
+    }
+    .home-left-container{
+        padding-right: 7vmax !important;
     }
 }

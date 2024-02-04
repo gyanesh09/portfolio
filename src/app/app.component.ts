@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { ScrollServiceService } from './services/scroll-service.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ScrollServiceService } from './services/scroll-service.service';
 })
 export class AppComponent {
   title = 'portfolio';
-
+  isSideBarOpen = false
   navBarItems = [{
     label: 'Home',
     isActive: true,
@@ -34,14 +34,17 @@ export class AppComponent {
   constructor(private renderer: Renderer2, public el: ElementRef, private http: HttpClient,
     private scrollService: ScrollServiceService) { };
 
-  scrollToSection(sectionId: string, i: number) {
+  scrollToSection(sectionId: string, i: number, isSideBar = false, event:Event) {
+    if (isSideBar) {
+      this.toggleSideBar(event);
+    }
     const element = this.el.nativeElement.querySelector(`#${sectionId}`);
     if (element) {
       element.scrollIntoView();
     }
   }
 
-  resetNavItemState(){
+  resetNavItemState() {
     this.navBarItems.forEach((item) => {
       item.isActive = false
     })
@@ -49,35 +52,55 @@ export class AppComponent {
 
   sectionIds = ['home-page', 'exp-page', 'skills-page', 'contacts-page'];
 
-  activeNavItem='home-page';
+  activeNavItem = 'home-page';
 
   @HostListener('window:scroll', ['$event'])
-   onScroll(event: any) {
-    console.log("Scrolled")
+  onScroll(event: any) {
     this.setActivePage(window.scrollY);
-    //  this.scrollEvent.emit(window.scrollY);
-   }
+  }
 
-   setActivePage(scrollPosition:number){
+  setActivePage(scrollPosition: number) {
     for (const sectionId of this.sectionIds) {
+
       const element = document.getElementById(sectionId);
 
       if (element) {
-        const elementOffset = element.offsetTop-50;
+        const elementOffset = element.offsetTop - 50;
         const elementHeight = element.offsetHeight;
 
         if (scrollPosition >= elementOffset && scrollPosition < elementOffset + elementHeight) {
           this.resetNavItemState();
-          this.navBarItems[this.sectionIds.indexOf(sectionId)].isActive=true;
+          this.navBarItems[this.sectionIds.indexOf(sectionId)].isActive = true;
           break;
         }
       }
     }
-   }
+  }
 
   ngOnInit() {
     this.scrollService.scrollEvent.subscribe((scrollPosition: number) => {
-   
+
     });
+  }
+
+  toggleSideBar(event:Event) {
+    event.stopPropagation();
+    this.isSideBarOpen = !this.isSideBarOpen
+  }
+
+  closeSideBar(event:Event) {
+    event.stopPropagation();
+    this.isSideBarOpen = false
+  }
+
+
+  @ViewChild('sidebar') sidebar!: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  public onClick(event: Event): void {
+    if (!this.sidebar.nativeElement.contains(event.target)) {
+      if(this.isSideBarOpen)
+        this.closeSideBar(event);
+    }
   }
 }

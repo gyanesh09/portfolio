@@ -146,11 +146,22 @@
 }
 
 @media (max-width:500px) {
+
+    #exp-counter-label{
+        font-size: 1.7vmax !important;
+    }
+    
     .exp-container{
         flex-direction: column;
     }
     .exp-nav-container{
         width: 80%;
+    }
+    .headline-exp{
+        font-size: 1.7vmax !important;
+    }
+    .exp-nav-item{
+        font-size: 1.6vmax;
     }
     .exp-counter-wrapper{
         padding: 0;
@@ -158,7 +169,7 @@
     .exp-desc-content{
         ul{
             li{
-                font-size: 1.5vmax;
+                font-size: 1.7vmax;
             }
         }
     }

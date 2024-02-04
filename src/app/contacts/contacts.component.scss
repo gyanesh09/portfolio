@@ -98,3 +98,19 @@
     }
     
 }
+
+
+@media (max-width:600px) {
+    .left-pane div span{
+        font-size: 1.7vmax;
+    }
+    img{
+        width: 2.5rem !important;
+    }
+    .text-input, .text-area, .submit-button{
+        font-size: 1.5vmax !important;
+    }
+    .left-pane{
+        align-self: flex-end;
+    }
+}
