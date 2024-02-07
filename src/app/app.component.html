@@ -5,7 +5,7 @@
         (click)="toggleSideBar($event)">
 
 </div>
-<app-home (scrollToSection)="scrollToSection('exp-page',1,false,$event)"></app-home>
+<app-home id="home-page" (scrollToSection)="scrollToSection('exp-page',1,false,$event)"></app-home>
 <app-exp-page id="exp-page"></app-exp-page>
 <app-skills-page id="skills-page"></app-skills-page>
 <app-contacts id="contacts-page"></app-contacts>
@@ -13,7 +13,7 @@
 <div class="mobile-sidebar" [ngClass]="isSideBarOpen?'active':''" #sidebar>
     <img src="assets/img/close-line.svg" class="close-bt" [ngClass]="isSideBarOpen?'active':''"
         (click)="toggleSideBar($event)">
-    <div href="#" class="sidebar-item" [ngClass]="item.isActive?'active':''"
+    <div class="sidebar-item" [ngClass]="item.isActive?'active':''"
         *ngFor="let item of navBarItems; let i =index" (click)="scrollToSection(item.scrollToSection,i,true, $event)">
         {{item.label}}</div>
 </div>

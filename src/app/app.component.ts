@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { ScrollServiceService } from './services/scroll-service.service';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -58,17 +59,17 @@ export class AppComponent {
   onScroll(event: any) {
     this.setActivePage(window.scrollY);
   }
-
+  
   setActivePage(scrollPosition: number) {
     for (const sectionId of this.sectionIds) {
-
       const element = document.getElementById(sectionId);
-
       if (element) {
-        const elementOffset = element.offsetTop - 50;
-        const elementHeight = element.offsetHeight;
-
+        const rect = element.getBoundingClientRect();
+        const elementOffset = rect.top + window.scrollY - 50;
+        const elementHeight = rect.height;
+  
         if (scrollPosition >= elementOffset && scrollPosition < elementOffset + elementHeight) {
+          console.log("Event Trigger");
           this.resetNavItemState();
           this.navBarItems[this.sectionIds.indexOf(sectionId)].isActive = true;
           break;
@@ -76,10 +77,10 @@ export class AppComponent {
       }
     }
   }
+  
 
   ngOnInit() {
     this.scrollService.scrollEvent.subscribe((scrollPosition: number) => {
-
     });
   }
 
