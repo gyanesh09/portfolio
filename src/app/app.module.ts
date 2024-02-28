@@ -26,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgApexchartsModule,
     TagCloudComponent,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

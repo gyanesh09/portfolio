@@ -6,8 +6,6 @@ import {
   Input,
   Output,
   Renderer2,
-  __spreadProps,
-  __spreadValues,
   setClassMetadata,
   ɵɵNgOnChangesFeature,
   ɵɵStandaloneFeature,
@@ -15,7 +13,11 @@ import {
   ɵɵdirectiveInject,
   ɵɵlistener,
   ɵɵresolveWindow
-} from "./chunk-PQVVWZCZ.js";
+} from "./chunk-3CFL6DLC.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-3HGWY7W4.js";
 
 // node_modules/angular-tag-cloud-module/fesm2022/angular-tag-cloud-module.mjs
 var DEFAULT_HEIGHT = 400;

@@ -21,6 +21,7 @@
     "@swimlane/ngx-charts": "^20.5.0",
     "angular-tag-cloud-module": "^17.0.0",
     "apexcharts": "^3.45.2",
+    "firebase": "^10.8.0",
     "ng-apexcharts": "^1.8.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

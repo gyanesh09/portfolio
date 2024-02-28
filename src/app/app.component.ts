@@ -3,6 +3,9 @@ import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angu
 import { ScrollServiceService } from './services/scroll-service.service';
 import { elementAt } from 'rxjs';
 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from './config/firebase.config';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,7 +38,7 @@ export class AppComponent {
   constructor(private renderer: Renderer2, public el: ElementRef, private http: HttpClient,
     private scrollService: ScrollServiceService) { };
 
-  scrollToSection(sectionId: string, i: number, isSideBar = false, event:Event) {
+  scrollToSection(sectionId: string, i: number, isSideBar = false, event: Event) {
     if (isSideBar) {
       this.toggleSideBar(event);
     }
@@ -59,7 +62,7 @@ export class AppComponent {
   onScroll(event: any) {
     this.setActivePage(window.scrollY);
   }
-  
+
   setActivePage(scrollPosition: number) {
     for (const sectionId of this.sectionIds) {
       const element = document.getElementById(sectionId);
@@ -67,7 +70,7 @@ export class AppComponent {
         const rect = element.getBoundingClientRect();
         const elementOffset = rect.top + window.scrollY - 50;
         const elementHeight = rect.height;
-  
+
         if (scrollPosition >= elementOffset && scrollPosition < elementOffset + elementHeight) {
           console.log("Event Trigger");
           this.resetNavItemState();
@@ -77,19 +80,20 @@ export class AppComponent {
       }
     }
   }
-  
+
 
   ngOnInit() {
     this.scrollService.scrollEvent.subscribe((scrollPosition: number) => {
     });
   }
 
-  toggleSideBar(event:Event) {
+
+  toggleSideBar(event: Event) {
     event.stopPropagation();
     this.isSideBarOpen = !this.isSideBarOpen
   }
 
-  closeSideBar(event:Event) {
+  closeSideBar(event: Event) {
     event.stopPropagation();
     this.isSideBarOpen = false
   }
@@ -100,7 +104,7 @@ export class AppComponent {
   @HostListener('document:click', ['$event'])
   public onClick(event: Event): void {
     if (!this.sidebar.nativeElement.contains(event.target)) {
-      if(this.isSideBarOpen)
+      if (this.isSideBarOpen)
         this.closeSideBar(event);
     }
   }

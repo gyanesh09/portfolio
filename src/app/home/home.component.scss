@@ -162,11 +162,12 @@
 
 .toast-msg {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 2px;
     background-color: white;
     display: flex;
     padding: 1rem;
-    background-color: rgb(67, 67, 67);
+    background: rgb(25,25,25);
+    background: linear-gradient(180deg, rgb(9 9 9) 0%, rgb(9 9 9) 40%, rgb(0, 0, 0) 100%);
     color: white;
     align-items: center;
     top: 0%;
@@ -178,21 +179,23 @@
     display: none;
 
     .toast-msg-icon {
-        border-right: 1px solid gray;
-        padding-right: 0.5rem;
+        // border-right: 1px solid gray;
+        // padding-right: 0.5rem;
         display: flex;
         align-items: center;
 
         img {
-            width: 18px;
-            height: 18px;
+            width: 29px;
+            height: 29px;
         }
     }
 
     .toast-msg-text {
-        padding-left: 0.5rem;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
-
 }
 
 @keyframes toptobtm {
