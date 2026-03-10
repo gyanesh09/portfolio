@@ -1,0 +1,263 @@
+    .love-page{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:relative;
+        overflow:hidden;
+        
+        // background: linear-gradient(
+        // 135deg,
+        // #ff9a9e 0%,
+        // #fad0c4 50%,
+        // #fad0c4 100%
+        // );
+        background: linear-gradient(
+    135deg,
+    #ff758c,
+    #ff7eb3,
+    #b24592
+    );
+        }
+        /* glass card */
+        
+        .content{
+        text-align:center;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding:60px;
+        border-radius:20px;
+        box-shadow:0 20px 40px rgba(0,0,0,0.2);
+        animation: fadeUp 2s ease;
+        }
+        
+        /* title */
+        
+        .title{
+        font-size:50px;
+        margin-bottom:20px;
+        }
+        
+        /* quote */
+        
+        .quote{
+        font-size:20px;
+        line-height:1.6;
+        margin-bottom:30px;
+        }
+        
+        /* love text */
+        
+        .love-text{
+        font-size:70px;
+        font-weight:bold;
+        text-shadow:
+        0 0 10px white,
+        0 0 20px white,
+        0 0 40px #ff4d6d;
+        animation: glow 2s infinite alternate;
+        }
+        
+        /* glow */
+        
+        @keyframes glow{
+        from{
+        text-shadow:0 0 10px white;
+        }
+        to{
+        text-shadow:0 0 30px white,0 0 60px #ff4d6d;
+        }
+        }
+        
+        /* floating hearts */
+        
+        .hearts span{
+            position:absolute;
+            bottom:-50px;
+            font-size:60px;   /* size bada */
+            opacity:0.6;
+            animation: float 8s linear infinite;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+            }
+        
+        .hearts span:nth-child(1){left:10%;}
+        .hearts span:nth-child(2){left:30%; animation-duration:7s;}
+        .hearts span:nth-child(3){left:50%; animation-duration:9s;}
+        .hearts span:nth-child(4){left:70%; animation-duration:6s;}
+        .hearts span:nth-child(5){left:90%; animation-duration:8s;}
+        
+        @keyframes float{
+        0%{
+        transform:translateY(0);
+        opacity:0;
+        }
+        50%{
+        opacity:1;
+        }
+        100%{
+        transform:translateY(-100vh);
+        opacity:0;
+        }
+        }
+        
+        /* photos */
+        
+        .photo{
+        position:absolute;
+        width:140px;
+        height:140px;
+        border-radius:15px;
+        object-fit:cover;
+        box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .p1{top:8%; left:10%; transform:rotate(-10deg);}
+        .p2{top:12%; right:10%; transform:rotate(8deg);}
+        .p3{bottom:10%; left:15%; transform:rotate(6deg);}
+        .p4{bottom:12%; right:15%; transform:rotate(-8deg);}
+        
+        /* animation */
+        
+        @keyframes fadeUp{
+        from{
+        opacity:0;
+        transform:translateY(30px);
+        }
+        to{
+        opacity:1;
+        transform:translateY(0);
+        }
+        }
+
+        .photo{
+            position:absolute;
+            width:160px;
+            height:auto;
+            border-radius:15px;
+            object-fit:cover;
+            }
+
+
+
+            
+
+            
+
+            .love-page{
+                height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                position:relative;
+                overflow:hidden;
+                
+                background: linear-gradient(-45deg,#ff758c,#ff7eb3,#ff9a9e,#f67280);
+                background-size:400% 400%;
+                animation: gradientMove 12s ease infinite;
+                }
+                
+                @keyframes gradientMove{
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+                }
+
+
+                .love-text{
+                    font-weight:700;
+                    letter-spacing:1px;
+                    
+                    text-shadow:
+                    0 0 10px rgba(255,255,255,0.8),
+                    0 0 20px rgba(255,100,150,0.8),
+                    0 0 40px rgba(255,100,150,0.8);
+                    
+                    animation: loveGlow 2.5s ease-in-out infinite alternate;
+                    }
+                    
+                    @keyframes loveGlow{
+                    from{
+                    text-shadow:0 0 10px rgba(255,255,255,0.6);
+                    }
+                    to{
+                    text-shadow:
+                    0 0 20px rgba(255,255,255,0.9),
+                    0 0 40px rgba(255,100,150,0.9);
+                    }
+                    }
+
+
+                    .content{
+                        background: rgba(255,255,255,0.15);
+                        backdrop-filter: blur(15px);
+                        border:1px solid rgba(255,255,255,0.3);
+                        
+                        box-shadow:
+                        0 25px 60px rgba(0,0,0,0.25),
+                        inset 0 0 20px rgba(255,255,255,0.2);
+                        }
+
+
+                        .hearts span:nth-child(1){left:10%; font-size:70px;}
+    .hearts span:nth-child(2){left:25%; font-size:50px;}
+    .hearts span:nth-child(3){left:45%; font-size:65px;}
+    .hearts span:nth-child(4){left:65%; font-size:55px;}
+    .hearts span:nth-child(5){left:85%; font-size:75px;}
+
+
+    @keyframes float{
+        0%{
+        transform:translateY(0) scale(0.9);
+        opacity:0;
+        }
+        50%{
+        opacity:0.7;
+        }
+        100%{
+        transform:translateY(-110vh) scale(1.1);
+        opacity:0;
+        }
+        }
+
+
+        .unlock-page{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#ff758c,#ff7eb3,#b24592);
+            }
+            
+            .unlock-card{
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(10px);
+            padding:50px;
+            border-radius:20px;
+            text-align:center;
+            color:white;
+            box-shadow:0 20px 40px rgba(0,0,0,0.2);
+            }
+            
+            .unlock-card input{
+            margin-top:20px;
+            padding:12px;
+            border-radius:8px;
+            border:none;
+            width:220px;
+            }
+            
+            .unlock-card button{
+            margin-top:20px;
+            padding:10px 20px;
+            border:none;
+            border-radius:20px;
+            background:#ff4d6d;
+            color:white;
+            cursor:pointer;
+            }
+            
+            .hint{
+            margin-top:15px;
+            opacity:0.8;
+            font-size:14px;
+            }

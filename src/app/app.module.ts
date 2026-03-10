@@ -11,6 +11,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { TagCloudComponent } from 'angular-tag-cloud-module';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
+import { ProposeComponent } from './propose/propose.component';
+import { HomeWrapperComponent } from './home-wrapper/home-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FormsModule } from '@angular/forms';
     ExpPageComponent,
     SkillsPageComponent,
     ContactsComponent,
+    ProposeComponent,
+    HomeWrapperComponent,
   ],
   imports: [
     ReactiveFormsModule,
