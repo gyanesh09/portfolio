@@ -1,8 +1,7 @@
 <div class="home-header">
     <div class="nav-item"
     [ngClass]="{
-      'active': item.isActive,
-      'special': i === navBarItems.length - 1
+      'active': item.isActive
     }"
     *ngFor="let item of navBarItems; let i = index"
     (click)="scrollToSection(item.scrollToSection,i,false,$event)">

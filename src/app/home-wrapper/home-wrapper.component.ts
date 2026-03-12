@@ -28,17 +28,10 @@ export class HomeWrapperComponent {
     label: 'Contact',
     isActive: false,
     scrollToSection: 'contacts-page'
-  },
-  {
-    label: "Rutu's Special",
-    isActive: false,
-    scrollToSection: 'for-rutu'
   }
-
-
   ]
 
-  constructor(private renderer: Renderer2, public el: ElementRef, private http: HttpClient, private router: Router,
+  constructor(private renderer: Renderer2, public el: ElementRef, private http: HttpClient, private router: Router, 
     private scrollService: ScrollServiceService) { };
 
   scrollToSection(sectionId: string, i: number, isSideBar = false, event: Event) {
